@@ -1,15 +1,8 @@
 name: main_test
 
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-  release:
-  create:
+on: [create, release, push]
 
-  workflow_dispatch:
 
 jobs:
   test:
