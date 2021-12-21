@@ -9,6 +9,7 @@ on:
 jobs:
 
   test:
+    name: test Docker
 
     runs-on: ubuntu-latest
 
