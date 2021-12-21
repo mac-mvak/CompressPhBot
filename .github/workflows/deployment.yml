@@ -5,6 +5,7 @@ name: deployment
 on:
   release:
     types: [published]
+  create:
 
 
 
