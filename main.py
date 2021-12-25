@@ -21,13 +21,13 @@ def work_with_help(message):
 def work_with_photo(message):
     file_info = bot.get_file(message.photo[-1].file_id)
     downloaded_file = bot.download_file(file_info.file_path)
-    image = open("image1.jpg", "wb")
+    image = open("image.jpg", "wb")
     image.write(downloaded_file)
-    photo = Image.open("image1.jpg")
+    photo = Image.open("image.jpg")
     compressed = photo.resize((photo.size[0]//10, photo.size[1]//10))
     photo = compressed.resize(photo.size)
-    photo.save("image1.jpg")
-    file = open("image1.jpg", "rb")
+    photo.save("image.jpg")
+    file = open("image.jpg", "rb")
     bot.send_photo(message.chat.id, file)
 
 
