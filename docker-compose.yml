@@ -2,7 +2,9 @@ version: '3'
 
 services:
   compress:
-    image: macmvak/compress_ph_bot
+    image: macmvak/compress_ph_bot:latest
+    labels:
+      - "com.centurylinklabs.watchtower.scope=myscope"
     environment:
       TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
 
@@ -10,5 +12,8 @@ services:
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - /root/.docker/config.json:/config.json
     command: --interval 40
-
+    environment:
+      REPO_USER: "${REPO_USER}"
+      REPO_PASS: "${REPO_PASSWORD}"
