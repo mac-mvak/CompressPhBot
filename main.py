@@ -24,7 +24,8 @@ def work_with_photo(message):
     image = open("image.jpg", "wb")
     image.write(downloaded_file)
     photo = Image.open("image.jpg")
-    compressed = photo.resize((photo.size[0]//10, photo.size[1]//10))
+    compressed = photo.resize((
+        max(1, photo.size[0]//10), max(1, photo.size[1]//10)))
     photo = compressed.resize(photo.size)
     photo.save("image.jpg")
     file = open("image.jpg", "rb")
