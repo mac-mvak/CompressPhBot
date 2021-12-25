@@ -19,7 +19,7 @@ jobs:
           ref: ${{ github.ref }}
           check-name: 'Python And Docker Test'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 300
+          wait-interval: 150
       - name: Check out the repo
         uses: actions/checkout@v2
 
