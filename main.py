@@ -11,9 +11,11 @@ def send_welcome(message):
     bot.reply_to(message, "Hello it's compress bot."
                           " Send me photo and I will compress it.")
 
+
 @bot.message_handler(commands='help')
 def send_welcome(message):
     bot.reply_to(message, "Send me photo and I will compress it.")
+
 
 @bot.message_handler(content_types=['photo'])
 def work_with_photo(message):
