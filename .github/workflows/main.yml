@@ -1,7 +1,11 @@
 name: main_test
 
 
-on: [push, create]
+on:
+  push:
+  create:
+    tags:
+      - "*"
 
 
 jobs:
